@@ -46,15 +46,20 @@ yesButtons.forEach(button => {
     });
 });
 
+// Beating heart click to play song
+const beatingHeart = document.getElementById('beating-heart');
+if (beatingHeart) {
+    beatingHeart.addEventListener('click', function() {
+        const audio = document.getElementById('celebration-song');
+        if (audio) {
+            audio.currentTime = 0;
+            audio.play();
+        }
+    });
+}
+
 // Create confetti effect
 function createConfetti() {
-    // Play celebration song
-    const audio = document.getElementById('celebration-song');
-    if (audio) {
-        audio.currentTime = 0;
-        audio.play();
-    }
-
     const colors = ['#ff6b9d', '#ffd700', '#c77dff', '#ff8fab', '#ffffff'];
     const confettiCount = 50;
     
